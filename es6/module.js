@@ -43,3 +43,11 @@ export default function() {
 //main.js
 import myFunc from 'Myfunc';
 myFunc();
+
+
+
+
+
+//ブラウザで動作するためには
+// Babelでは内部でimport関数をrequire関数に変換
+// Browserify(babelify)が必要
