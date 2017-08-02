@@ -51,3 +51,15 @@ console.log(person.show());
 console.log(Person.bark());
 
 //extendsで継承可能
+
+
+//prototype baseなら
+function Dog(cry) {
+  this.cry = cry;
+}
+Dog.prototype.bark = function() {
+  console.log(this.cry)
+};
+
+var dog = new Dog("わんわん");
+var dog2 = new Dog("wan wan");
