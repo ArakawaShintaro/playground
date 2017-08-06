@@ -35,3 +35,7 @@ try {
   console.log(e.message); //undefined
   console.log(e instanceof Error); //false
 }
+
+/*
+参考https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Exception_Handling_Statements/try...catch_Statement
+*/
