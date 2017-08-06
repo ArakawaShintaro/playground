@@ -25,3 +25,10 @@ let SmartPhone = Object.create(Phone, {
 
 console.log(SmartPhone.type) //iOS
 SmartPhone.call(); //...SmartPhone is Calling
+
+
+
+//プロトタイプチェーンをもたないObject（ハッシュテーブルなどに有用）
+
+let nakedObj = Object.create(null);
+console.log('toString' in namedObj); //false
