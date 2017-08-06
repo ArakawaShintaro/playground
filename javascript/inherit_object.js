@@ -8,3 +8,20 @@ let Phone = {
 let Phone2 = Object.create(Phone);
 Phone2.call(); //...my phone is Calling
 
+let SmartPhone = Object.create(Phone, {
+  name: {
+    value: 'SmartPhone',
+    writable: true,
+    configurable: true,
+    enumerable: true
+  },
+  type: {
+    value: 'iOS',
+    writable: true,
+    configurable: true,
+    enumerable: true
+  }
+});
+
+console.log(SmartPhone.type) //iOS
+SmartPhone.call(); //...SmartPhone is Calling
