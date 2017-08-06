@@ -5,3 +5,6 @@ let Phone = {
   }
 };
 
+let Phone2 = Object.create(Phone);
+Phone2.call(); //...my phone is Calling
+
