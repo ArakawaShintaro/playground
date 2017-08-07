@@ -1,6 +1,6 @@
 $(function() {
   ReactDOM.render(
-      <h1>Hello React with Rails</h1>,
+      <MessageBox />,
       document.getElementById("content")
     );
 });
