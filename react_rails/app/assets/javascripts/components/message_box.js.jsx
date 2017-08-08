@@ -31,10 +31,21 @@ var MessageBox = React.createClass({
 
   // What 配列やイテレータのそれぞれの子要素はユニークなkey属性を付与。 why Reactのパフォーマンスのため
   handleMessageSubmit: function(message) {
-    message.id = new Date();
-    var newMessages = this.state.messages.concat(message);
-    // setStateは連想配列を渡す
-    this.setState({ messages: newMessages });
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      type: 'POST',
+      data: message,
+    })
+    .then(
+      (message) => {
+        var newMessages = this.state.messages.concat(message);
+        this.setState({ messages: newMessages });
+      },
+      (_xhr, status, err) => {
+        console.error(this.props.url, status, err.toString());
+      }
+    );
   },
 
    render: function() {
