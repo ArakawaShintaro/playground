@@ -14,6 +14,13 @@ var MessageBox = React.createClass({
     };
   },
 
+  handleMessageSubmit: function(message) {
+    message.id = new Date();
+    var newMessages = this.state.messages.concat(message);
+    // setStateは連想配列を渡す
+    this.setState({ messages: newMessages });
+  },
+
    render: function() {
    var messageItems = this.state.messages.map(function(message) {
       return (
@@ -24,7 +31,7 @@ var MessageBox = React.createClass({
      return (
        <div className="messageBox">
         {messageItems}
-        <MessageForm />
+        <MessageForm onMessageSubmit={this.handleMessageSubmit} />
        </div>
      );
    }
