@@ -5,7 +5,7 @@ var MessageBox = React.createClass({
   */
 
    getInitialState: function() {
-    return { messages: [] };
+    return { messages: [], isLoading: true };
   },
 
   /*
@@ -21,7 +21,7 @@ var MessageBox = React.createClass({
     })
     .then(
         (messages) => {
-          this.setState({ messages: messages });
+          this.setState({ messages: messages, isLoading: false });
       },
         (_xhr, status, err) => {
           console.error(this.props.url, status, err.toString());
@@ -44,11 +44,17 @@ var MessageBox = React.createClass({
       );
     });
 
+   if (this.state.isLoading) {
+    return (
+      <div>Loading...</div>
+    );
+   } else {
      return (
        <div className="messageBox">
         {messageItems}
         <MessageForm onMessageSubmit={this.handleMessageSubmit} />
        </div>
      );
+    }
    }
  });
