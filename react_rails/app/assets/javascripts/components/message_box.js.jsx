@@ -14,6 +14,7 @@ var MessageBox = React.createClass({
     };
   },
 
+  // What 配列やイテレータのそれぞれの子要素はユニークなkey属性を付与。 why Reactのパフォーマンスのため
   handleMessageSubmit: function(message) {
     message.id = new Date();
     var newMessages = this.state.messages.concat(message);
