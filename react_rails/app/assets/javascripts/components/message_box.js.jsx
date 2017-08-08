@@ -12,6 +12,26 @@ var MessageBox = React.createClass({
         { id: 3, user: 'Emily', text: 'Good evening' }
       ]
     };
+
+  /*
+  サーバーからメッセージ一覧を取得し、
+  setState({ messages: messages })でstateにメッセージを設定
+  */
+  componentDidMount: function() {
+    $.ajax({
+      // url="/messages"
+      url: this.props.url,
+      dataType: 'json',
+      cache: false,
+    })
+    .then(
+        (messages) => {
+          this.setState({ messages: messages });
+      },
+        (_xhr, status, err) => {
+          console.error(this.props.url, status, err.toString());
+        }
+      );
   },
 
   // What 配列やイテレータのそれぞれの子要素はユニークなkey属性を付与。 why Reactのパフォーマンスのため
