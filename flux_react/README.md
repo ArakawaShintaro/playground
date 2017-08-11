@@ -1,7 +1,10 @@
 # Description
 web server : node + express
 
-flont      : react + flux
+flont      : react + redux
+
+build      : babel + browserify + babelify
+
 
 # run server
 
