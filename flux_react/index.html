@@ -4,7 +4,28 @@
   <meta charset="UTF-8" />
   <title>TODO APP by React + redux</title>
   <body>
-    <div id="contents"></div>
+    <!-- テキストを入力 -->
+    <div id="addTodo">
+        <form onSubmit="">
+          <input type="text" />
+          <button type="submit">
+            Add Todo
+          </button>
+        </form>
+    </div>
+
+    <!-- TODO一覧 -->
+    <ul id="todoList">
+      <li>First TODO</li>
+      <li style="text-decoration: line-through;">Second TODO</li>
+      <li>Third TODO</li>
+    </ul>
+
+    <p id="liniks">
+      Show:
+      <span>All</span>, <a href="">Active</a>, <a href="">Completed</a>
+    </p>
+
     <script src="bundle.js"></script>
   </body>
 </html>
