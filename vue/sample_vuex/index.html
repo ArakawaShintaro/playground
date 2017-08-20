@@ -9,6 +9,10 @@
 <!-- Vue.jsは値の取得に対しては関与しないフレームワークだが、Vuexを入れることにより値の取得からセットまでライブラリで制御できるので、無秩序になりがちだったVue.jsを使ったアプリケーションに秩序をもたらすことが出来そう
  -->
 
+<!-- vueのtemplateの中にmethodやcomputedを書くとそれがvue.jsによって監視される。
+computedの場合は結果をキャッシュするからtemplateの中に何か処理を書く場合はcomputedを使用するのがベター
+template以外で何か処理をする場合はmethodsを使う -->
+
 <script>
   const store = new Vuex.Store({
     state: {
