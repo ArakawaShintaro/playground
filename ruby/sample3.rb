@@ -1,0 +1,37 @@
+# class FriendList
+#   include Enumerable
+
+#   def initialize(*friends)
+#     @friend = friends
+#   end
+
+#   def each
+#     puts "呼ばれたよ"
+#     for v in @friend
+#       yield v
+#     end
+#   end
+# end
+
+# friend_list = FriendList.new('Arakawa', 'Shin', 'Taro')
+
+# friend_list.map {|hoge| puts hoge.upcase}
+
+# class Rular
+#   attr_accessor :length
+
+#   def initialize(length)
+#     self.length = length
+#   end
+
+#   def ==(other)
+#     length == self.length
+#   end
+#   同一性から同値性に変更
+#   基本的には同値性にオーバーライドされている
+# end
+
+# r1 = Rular.new(30)
+# r2 = Rular.new(30)
+
+# p r1 == r2 //true
