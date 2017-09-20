@@ -35,3 +35,8 @@
 # r2 = Rular.new(30)
 
 # p r1 == r2 //true
+
+# '24-1-365'.sub(/[0-9]+/, 'x') => "x-1-365"
+# gsubだと全てxに置換される "x-x-x"
+
+p 'Alice'.each_char.to_a
