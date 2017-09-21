@@ -39,4 +39,12 @@
 # '24-1-365'.sub(/[0-9]+/, 'x') => "x-1-365"
 # gsubだと全てxに置換される "x-x-x"
 
-p 'Alice'.each_char.to_a
+# p 'Alice'.each_char.to_a
+
+# s = String.new(capacity: 10)
+
+# 2000.times do
+#   s << 'helli'
+# end
+
+# puts s
