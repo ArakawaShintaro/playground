@@ -48,3 +48,16 @@
 # end
 
 # puts s
+
+# def alice?(pattern)
+#   pattern === 'alice'
+# end
+
+# p alice?(/Alice/i)
+# p alice?('alice')
+
+# str = 'ruby4'
+
+# if matched = /[0-9]/.match(str)
+#   p matched
+# end
