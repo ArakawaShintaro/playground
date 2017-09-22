@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Top from '@/components/Top'
+import Talk from '@/components/Talk'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Top',
+      component: Top
+    },
+    {
+      path: '/talk',
+      name: 'Talk',
+      component: Talk
     }
   ]
 })
