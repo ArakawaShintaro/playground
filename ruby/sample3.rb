@@ -62,6 +62,13 @@
 #   p matched
 # end
 
-people = %w(Arakwa Shin Taro)
-p people.min_by { |s| s.length }
-p people.minmax_by { |s| s.length }
+# people = %w(Arakwa Shin Taro)
+# p people.min_by { |s| s.length }
+# p people.minmax_by { |s| s.length }
+
+# p people.sort { |a,b| a.length <=> b.length }
+# p people
+
+# p Array.new(3) { |i| i.succ + 3 }
+
+# p [1,2,3].eql?(["1","2","3"]) false
