@@ -61,3 +61,7 @@
 # if matched = /[0-9]/.match(str)
 #   p matched
 # end
+
+people = %w(Arakwa Shin Taro)
+p people.min_by { |s| s.length }
+p people.minmax_by { |s| s.length }
