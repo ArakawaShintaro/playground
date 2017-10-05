@@ -96,3 +96,7 @@
 
 # hash.has_key?(:unknown) => false
 # hash.has_key?(:foo) => true
+
+hash = { one: 1, two: 2, hoge: 2 }
+p hash.keys
+p hash.key(2)
