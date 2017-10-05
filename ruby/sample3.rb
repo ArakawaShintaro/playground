@@ -72,3 +72,7 @@
 # p Array.new(3) { |i| i.succ + 3 }
 
 # p [1,2,3].eql?(["1","2","3"]) false
+
+hash = { foo: 1, bar: 2, baz: 3 }
+p hash.select! { |key, value| true }
+# keep_ifにしたらselfが返却される
