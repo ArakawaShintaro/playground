@@ -73,6 +73,26 @@
 
 # p [1,2,3].eql?(["1","2","3"]) false
 
-hash = { foo: 1, bar: 2, baz: 3 }
-p hash.select! { |key, value| true }
-# keep_ifにしたらselfが返却される
+# hash = { foo: 1, bar: 2, baz: 3 }
+# p hash.select! { |key, value| true }
+# # keep_ifにしたらselfが返却される
+
+# p hash.select { |key, val| val.odd? }
+# p hash
+# # 破壊的ではない
+
+# def keywords(options)
+#   defaults = { alice: 'ありす', bob: 'ぼぶ' }
+#   hash = defaults.merge(options)
+#   hash
+# end
+
+# p keywords bob: 'ボブ'
+# # オプション引数はHashとして受け取られる
+
+# hash = { foo: nil }
+# hash[:hoge] => nil
+# hash[:foo] => nil
+
+# hash.has_key?(:unknown) => false
+# hash.has_key?(:foo) => true
