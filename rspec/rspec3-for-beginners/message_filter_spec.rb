@@ -17,6 +17,9 @@ describe MessageFilter do
     subject { MessageFilter.new('foo') }
     # subjectはテスト対象を引き上げることができる
     it_behaves_like 'MessageFilter with argument "foo"'
+    it 'ng_words size is 1' do
+      expect(subject.ng_words.size).to eq 1
+    end
   end
 
   context 'with argument "foo", "bar"' do
