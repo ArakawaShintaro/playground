@@ -1,4 +1,5 @@
 require_relative 'message_filter'
+require 'rspec/its'
 
 describe MessageFilter do
   # it_behaves_like の引数は十分に説明的で、
@@ -15,9 +16,7 @@ describe MessageFilter do
     subject { MessageFilter.new('foo') }
     # subjectはテスト対象を引き上げることができる
     it_behaves_like 'MessageFilter with argument "foo"'
-    it 'ng_words should not be empty' do
-      expect(subject.ng_words).not_to be_empty
-    end
+    its(:ng_words) { is_expected.not_to be_empty }
   end
 
   context 'with argument "foo", "bar"' do
