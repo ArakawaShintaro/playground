@@ -16,7 +16,7 @@ describe MessageFilter do
     # subjectはテスト対象を引き上げることができる
     it_behaves_like 'MessageFilter with argument "foo"'
     it 'ng_words should not be empty' do
-      expect(subject.ng_words.empty?).to eq false
+      expect(subject.ng_words).not_to be_empty
     end
   end
 
