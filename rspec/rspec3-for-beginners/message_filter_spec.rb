@@ -11,13 +11,13 @@ describe MessageFilter do
     # expect(@filter.detect?('hello, world!')).to eq false
   end
 
-  describe 'with argument "foo"'  do
+  context 'with argument "foo"'  do
     subject { MessageFilter.new('foo') }
     # subjectはテスト対象を引き上げることができる
     it_behaves_like 'MessageFilter with argument "foo"'
   end
 
-  describe 'with argument "foo", "bar"' do
+  context 'with argument "foo", "bar"' do
     subject { MessageFilter.new('foo', 'bar') }
     it { is_expected.to be_detect('hello from bar') }
     it_behaves_like 'MessageFilter with argument "foo"'
