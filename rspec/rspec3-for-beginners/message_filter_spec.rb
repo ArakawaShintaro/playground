@@ -18,13 +18,14 @@ describe MessageFilter do
     subject { MessageFilter.new('foo') }
     # subjectはテスト対象を引き上げることができる
     it_behaves_like 'MessageFilter with argument "foo"'
-    its(:ng_words) { is_expected.to have(1).item }
+    it { is_expected.to have(1).ng_words }
   end
 
   context 'with argument "foo", "bar"' do
     subject { MessageFilter.new('foo', 'bar') }
     it { is_expected.to be_detect('hello from bar') }
     it_behaves_like 'MessageFilter with argument "foo"'
+    it { is_expected.to have(2).ng_words }
   end
 
 end
