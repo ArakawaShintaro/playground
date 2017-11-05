@@ -10,13 +10,13 @@ describe MessageFilter do
     # be_predicticateは?で終わるメソッドを代用できる
     it { is_expected.not_to be_detect('hello, world') }
     # expect(@filter.detect?('hello, world!')).to eq false
+    its(:ng_words) { is_expected.not_to be_empty }
   end
 
   context 'with argument "foo"'  do
     subject { MessageFilter.new('foo') }
     # subjectはテスト対象を引き上げることができる
     it_behaves_like 'MessageFilter with argument "foo"'
-    its(:ng_words) { is_expected.not_to be_empty }
   end
 
   context 'with argument "foo", "bar"' do
