@@ -40,3 +40,13 @@ end
 
 p InstanceCountClass.instance_count
 p NewInstanceCountClass.instance_count #nil
+
+class Fuga
+  @@str = "fuga!!"
+  define_method :instance_method, -> { puts @@str }
+end
+
+object = Fuga.new
+p object.instance_method
+
+p "-------"
