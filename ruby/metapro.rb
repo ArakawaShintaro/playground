@@ -50,3 +50,26 @@ object = Fuga.new
 p object.instance_method
 
 p "-------"
+
+class OrifinalClass
+end
+
+obj = OrifinalClass.new
+
+def obj.new_singleton_method
+  puts "new_singleton_method"
+end
+
+p obj.class
+p obj.singleton_class
+p obj.singleton_class.method_defined? :new_singleton_method
+
+p 'シングルトンオブジェクト'
+
+SINGLETON_OBJECT = object.new
+
+class << SINGLETON_OBJECT
+  def only_method
+    puts "only_method"
+  end
+end
