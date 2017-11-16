@@ -27,3 +27,25 @@ p what_class "string"
 
 proc_obj = proc { 1 }
 p proc_obj.call
+
+#カリー化
+add = Proc.new { |x,y| x + y }
+inc = add.curry.(1)
+p inc.(2)
+
+#procの他の作り方
+obj = lambda { 1 }
+p obj.call
+
+inc = ->(x) { x + 1 }
+p inc.(1)
+
+# クロージャ
+def create_proc
+  str = 'create_proc'
+end
+
+proc_obj = create_proc
+str = 'from toplevel'
+
+p create_proc
