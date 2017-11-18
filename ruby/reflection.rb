@@ -9,4 +9,6 @@ instance_val = InstanceVal.new
 hoge = instance_val.instance_variables.select do |valiable_name|
   valiable_name =~ /fo/
 end
-p hoge
+hoge
+eval("p a", sample)
+
