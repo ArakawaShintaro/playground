@@ -1,6 +1,7 @@
+#moduleのフック
 module IncludedCount
   class << self
-    def included(klass)
+    def included(klass) #includeされた時に呼ばれる
       @included ||= []
       @included << klass
     end
@@ -31,3 +32,5 @@ end
 
 p IncludedCount.included_count
 p IncludedCount.included_module_and_class
+
+#クラス継承のフック
