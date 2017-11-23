@@ -22,3 +22,15 @@ EOS
 CSV.parse(data) do |row|
   puts row.join('|')
 end
+
+data = <<EOS
+name,age,gender
+arakawa,23,man
+shintaro,22,woman
+EOS
+
+CSV.parse(data, headers: :first_row) do |row|
+  name, age, gender = row.values_at('name', 'age', 'gender')
+  puts "#{name} is #{gender} #{age}"
+end
+
