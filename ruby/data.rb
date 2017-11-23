@@ -34,3 +34,14 @@ CSV.parse(data, headers: :first_row) do |row|
   puts "#{name} is #{gender} #{age}"
 end
 
+puts
+
+converter = ->(feild, field_info) {
+  if field_info.index == 1
+    feild.upcase
+  else
+    feild
+  end
+}
+
+p CSV.parse(%(foo, bar, baz), converters: converter)
