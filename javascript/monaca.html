@@ -1,0 +1,66 @@
+!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        /* イベントリスナー */
+        $(document).on('pageshow', '#home', function() {
+            //Monacaボタン押下イベント
+            $("#ibtn-1").on("click", function(){
+                funcSample("Monaca");
+            });
+            //Testボタン押下イベント
+            $("#ibtn-2").on("click", function(){
+                funcSample("Test");
+            });
+        });
+        /* 定義関数*/
+        function funcSample(name){
+            console.log(name+"1");
+            alert(name+"1");
+            (function() {
+                console.log(name+"2");
+                alert(name+"2");
+            })();
+            console.log(name+"3");
+            alert(name+"3");
+        }
+    </script>
+</head>
+<body>
+  <div id="home" data-role="page">
+    <div data-role="header" >
+        <center>Monaca実践編</center>
+    </div>
+    <!-- ボタン１ -->
+    <div><button name="nbtn-1" id="ibtn-1">Monaca</button></div>
+    <!-- ボタン２ -->
+    <div><button name="nbtn-2" id="ibtn-2">TEST</button></div>
+    <div>マナーモード設定</div>
+    <select name="flip-1" id="flip-1" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on">On</option>
+    </select>
+    <div>タイマー起動</div>
+    <select name="flip-2" id="flip-2" data-role="slider">
+        <option value="off">Off</option>
+        <option value="on" selected >On</option>
+    </select>
+    <div>各種設定</div>
+    <ul data-role="listview">
+        <li><a href="">SNS設定</a></li>
+        <li><a href="">GPS設定</a></li>
+        <li><a href="">ネットワーク設定</a></li>
+    </ul>
+    <label>指定範囲</label>
+    <div data-role="rangeslider">
+        <input type="range" name="range-1a" id="range-1a" min="0" max="100" value="40">
+        <input type="range" name="range-1b" id="range-1b" min="0" max="100" value="80">
+    </div>
+  </div>
+</body>
+</html>
