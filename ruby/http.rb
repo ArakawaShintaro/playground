@@ -27,3 +27,10 @@ end
 
 uri = URI.parse('http://gihyo.jp/')
 fetch uri
+
+#プロキシでアクセス
+proxy_class = Net::HTTP::Proxy('127.0.0.1',3000)
+http_proxy = proxy_class.new('www.ruby-lang.org')
+http_proxy.start do |h|
+  p h.get('/ja')
+end
