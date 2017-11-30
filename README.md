@@ -1,16 +1,11 @@
 # playground
 
-To try various code
+I'm interested in
 
-```
-es6
-Ruby(RoR)
-react
-vue
-angular
+- Ruby(RoR)
+- ES6
+- React
+- Vue
+- Angular
 
 etc...
-```
-
-and record the knowledge.
-
