@@ -40,13 +40,19 @@ puts Gear.new(52, 11).ratio
 # データ構造の隠蔽
 
 class Hoge
-  attr_reader :data
+  attr_reader :wheels
 
   def initialize(data)
-    @data = data
+    @wheels = wheelify(data)
   end
 
   def diameters
-    data.collect { |cell| cell[0] + cell[1] * 2 }
+    wheels.collect { |wheel| wheel.rim + wheel.tire * 2 }
+  end
+
+  Wheel = Struct.new(:rim, :tire) do
+    def wheelify(data)
+      data.collect { |cell| Wheel.new(cell[0], cell[1]) }
+    end
   end
 end
