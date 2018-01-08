@@ -8,7 +8,6 @@ class Gear
     @tire = tire
   end
 
-  def fear_inches
     ratio * Wheel.new(rim, tire).diameter
   end
 end
