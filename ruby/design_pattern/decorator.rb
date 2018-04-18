@@ -7,8 +7,8 @@ class SimpleWriter
   end
 
   def write_line(line)
-    @file.print(line)
-    @file.print("\n")
+    @file.write(line)
+    @file.write("\n")
   end
 
   def pos
@@ -24,4 +24,7 @@ class SimpleWriter
   end
 end
 
+writer = SimpleWriter.new('sample1.txt')
+writer.write_line('私は荒川です')
+writer.close
 # デコレーター（追加する機能をもつ）
