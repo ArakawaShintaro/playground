@@ -8,7 +8,7 @@ class SimpleWriter
 
   def write_line(line)
     @file.print(line)
-    @file.print('\n')
+    @file.print("\n")
   end
 
   def pos
