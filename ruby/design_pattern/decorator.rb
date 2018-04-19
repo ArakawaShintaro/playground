@@ -1,6 +1,7 @@
 # 既存の基底クラスを変更せず、機能を追加する
 
 require 'pry'
+require 'forwardable'
 
 # 具体コンポーネント（ベースとなる処理をもつオブジェクト）
 # クラス内部は変更したくない
@@ -29,25 +30,32 @@ end
 
 # Decoratorを複数作る場合に重複したコードを共通化
 class WriterDecorator
+  extend Forwardable
+
+  def_delegators :@real_writer, :write_line, :pos, :rewind, :close
+
   def initialize(real_writer)
     @real_writer = real_writer
   end
+  # def initialize(real_writer)
+  #   @real_writer = real_writer
+  # end
 
-  def write_line(line)
-    @real_writer.write_line(line)
-  end
+  # def write_line(line)
+  #   @real_writer.write_line(line)
+  # end
 
-  def pos
-    @real_writer.pos
-  end
+  # def pos
+  #   @real_writer.pos
+  # end
 
-  def rewind
-    @real_writer.rewind
-  end
+  # def rewind
+  #   @real_writer.rewind
+  # end
 
-  def close
-    @real_writer.close
-  end
+  # def close
+  #   @real_writer.close
+  # end
 end
 
 # デコレーター（追加する機能をもつ）
