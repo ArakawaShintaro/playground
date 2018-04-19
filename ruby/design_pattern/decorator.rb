@@ -27,7 +27,51 @@ class SimpleWriter
   end
 end
 
-writer = SimpleWriter.new('sample1.txt')
-writer.write_line('私は荒川です')
-writer.close
+# Decoratorを複数作る場合に重複したコードを共通化
+class WriterDecorator
+  def initialize(real_writer)
+    @real_writer = real_writer
+  end
+
+  def write_line(line)
+    @real_writer.write_line(line)
+  end
+
+  def pos
+    @real_writer.pos
+  end
+
+  def rewind
+    @real_writer.rewind
+  end
+
+  def close
+    @real_writer.close
+  end
+end
+
 # デコレーター（追加する機能をもつ）
+class NumberingWriter < WriterDecorator
+  def initialize(real_writer)
+    super(real_writer)
+    @line_number = 1
+  end
+
+  def write_line(line)
+    @real_writer.write_line("#{@line_number} : #{line}")
+  end
+end
+
+f = NumberingWriter.new(SimpleWriter.new("file1.txt"))
+f.write_line('Hello World!!')
+f.close
+
+class TimestampingWriter < WriterDecorator
+  def write_line(line)
+    @real_writer.write_line("#{Time.new} : #{line}")
+  end
+end
+
+f = TimestampingWriter.new(SimpleWriter.new("file2.txt"))
+f.write_line("Hello out there")
+f.close
