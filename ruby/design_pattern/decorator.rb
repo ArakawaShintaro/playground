@@ -1,6 +1,9 @@
+# 既存の基底クラスを変更せず、機能を追加する
+
 require 'pry'
 
 # 具体コンポーネント（ベースとなる処理をもつオブジェクト）
+# クラス内部は変更したくない
 class SimpleWriter
   def initialize(path)
     @file = File.open(path, 'w')
