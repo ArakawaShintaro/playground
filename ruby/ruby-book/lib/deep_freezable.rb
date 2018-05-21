@@ -1,4 +1,6 @@
 module DeepFreezable
+  private
+
   def deep_freeze(arrya_or_hash)
     case arrya_or_hash
     when Array
