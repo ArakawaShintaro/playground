@@ -1,5 +1,4 @@
 require 'pry'
-require './lib/ticket'
 
 class Gate
   STATIONS = [:umeda, :juso, :mikuni]
